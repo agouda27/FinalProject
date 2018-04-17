@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Asset Update</title>
+		<link rel="stylesheet" href="styles/app.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+		<link rel="icon" type="image/gif" href="sunflower-small.gif">
+
+	</head>
+
+
+
+
+	<body>
+
+		<header>
+			<div class="logo">
+				<img src="sunflower_enterprise_black_small.gif" alt="Sunflower Enterprise logo">
+				<span>Sunflower Enterprise - Production 5.0.0.0</span>
+			</div>
+
+			<div class="wrapper-header">
+				<h2 class="pageHeader">
+					Update Asset Information
+				</h2>
+				<nav class="col-right">
+					 <a class= "nav-link nav-link-active" href="index.html">Single Update</a>
+					 <a class= "nav-link" href="#">Mass Update</a>
+					 <a class= "nav-link" href="#">Combo</a>
+					
+				</nav>
+			</div> 			
+		</header>
+		<section>
+				<form id="SingleUpdate" name="AssetSingleUpdate" method="get" action="">
+	          		<fieldset id="Identifier" class="identifier-col">
+							<div class="cell-header">Identifier</div>
+
+							<div class="cell"><input type="number" name="Identifier" min="0" autofocus autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+							<div class="cell"><input type="number" name="Identifier"      	min="0" autocomplete="off" placeholder="Pin Number"></div>
+
+					</fieldset>
+
+					<fieldset id="Description" class="description-col">
+						<div class="cell-header">Description</div>
+						<div class="cell"><input type="text" name="Description"  autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			 autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+						<div class="cell"><input type="text" name="Description" 			autocomplete="off" placeholder="Asset Description"></div>
+					</fieldset>
+
+
+					<fieldset  id="Asset" class="information-col">
+						<div class="cell-header">Information</div>
+						<div class="info-container">
+							<div class="info-row">
+								<div class="info-cells"><label>Owner</label><input type="search" name="Owner" autocomplete="on"></div>
+								<div class="info-cells"><label>Location</label><input type="search" name="Location" autocomplete="on"></div>	
+							</div>
+							<div class="info-row">
+								<div class="info-cells"><label>Manager</label><input type="search" name="Manager" autocomplete="on"></div>
+								<div class="info-cells"><label>Activity Status</label><input type="search" name="Activity Status" autocomplete="on"></div>	
+							</div>
+							<div class="info-row">
+								<div class="info-cells"><label>Steward</label><input type="search" name="Steward" autocomplete="on"></div>
+								<div class="info-cells"><label>Activity Type</label><input type="search" name="Activity Type" autocomplete="on"></div>	
+							</div>
+
+							<div class="info-row">
+								<div class="info-cells"><label>User</label><input type="search" name="User" autocomplete="on"></div>
+								<div class="info-cells"><label>Asset Conditions</label><input type="search" name="Asset Condition" autocomplete="on"></div>	
+							</div>
+
+							<div class="info-row">
+								<div class="info-cells"><label>Custodian</label><input type="search" name="Custodian" autocomplete="on"></div>
+								<div class="info-cells"><label>Expected Return Date</label><input type="search" name="Expected Return Date" autocomplete="on"></div>	
+							</div>
+
+
+						</div>
+						<input class="button" type="submit" name="submitSingUpdate" id="submitSingUpdate" value="Send" tabindex="300">
+
+					</fieldset>
+				</form>			
+		</section>
+	</body>
+</html>

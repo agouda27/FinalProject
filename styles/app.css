@@ -1,0 +1,279 @@
+
+.logo{
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.logo span{
+	display: flex;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #AA8917;
+    padding-top: 5px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-top: auto;
+
+}
+.wrapper-header {
+	display: flex;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding: 0 10px;
+    flex-wrap: wrap;
+    background-color:  orange;
+    flex-wrap: wrap;
+    min-height: 80px;
+    margin-bottom: 20px;
+
+}
+.pageHeader{
+	color: #404040;
+	float:left;
+	font-weight: bolder;
+}
+
+.col-right {
+	margin-left: auto;
+	float: right;
+	margin-top:auto;
+	margin-bottom: 0px;
+	display: flex;
+    height: 100%;
+
+}
+.nav-link {
+	color:  #404040;
+	font-family: Helvetica;
+	padding: 20px;
+	font-size: 20px;
+	
+}
+.nav-link-active {
+	background: yellow;
+	border-top-right-radius: 10px;
+	padding-bottom: 10px;	
+	font-weight: bold;
+}
+
+.nav-link-active:hover {
+	color:black;	
+}
+
+
+a{
+	text-decoration: none;
+
+}
+a:hover { 
+    color:  yellow;
+}
+.identifier-col{
+	width:20%;
+	background: #FAEBD7;
+	margin:0px;
+	padding:0px;
+	border: transparent;
+    border-radius: 10px;
+    border-right: solid #404040	;
+    display: flex;
+    flex-direction: column;
+}
+.description-col{
+	width:20%;
+	background: #FAEBD7;
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	border: transparent;
+    border-radius: 10px;
+    border-right: solid #404040;
+    flex-direction: column;
+	}
+
+.information-col{
+	width:60%;
+	background: #FAEBD7;
+	border: transparent;
+    border-radius: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+.cell-header {
+    height: 2rem;
+    background: orange;
+    font-size: 1.5rem;
+    border-bottom: 5px solid #404040; 
+    text-align: center;
+    border-radius: 10px;
+    color:  #404040;
+    font-weight: bold;
+}
+
+.cell{
+    height: 2rem;
+    background: #7FFFD4;
+    margin: 4px;
+    display: flex;
+    border-radius: 10px
+
+
+}
+.cell input{
+	margin-left: 20px;
+	margin-right: auto;
+	
+
+}
+.info-row{
+	display: flex;
+	justify-content: space-between;
+}
+.info-cells{
+	width:40%;
+    background: #7FFFD4;
+    margin: 4px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+
+.info-cells label{
+	margin:8px 5px auto;
+	font-size: 1.2rem;
+	display: flex;
+	overflow: hidden;
+
+}
+
+input{
+	  box-shadow: none;
+	  border:transparent;
+	  margin-right: 10px;
+	  display: flex;
+	  border-radius: 10px;
+}
+
+
+input:hover {
+	background: yellow;  
+}
+
+
+.info-container{
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+    margin: 10px;
+    padding: 10px;
+}
+
+#SingleUpdate{
+	display: flex;
+	width: 100%;
+}
+
+.button{
+	color: #404040;
+	font-family: Oswald;
+	font-size: 20px;
+	font-weight: bold;
+	vertical-align: middle;
+	background-color: yellow;
+	box-sizing: border-box;
+	width:90%;	
+	display: block;
+	margin: auto;
+	min-height: 40px;
+	border-radius: 15px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+
+
+@media all and (max-width: 900px) {
+	.logo{
+		margin-bottom: 10px;
+	}
+
+	.logo span{
+	    font-size: 12px;
+	}
+	.wrapper-header {
+	    margin-bottom: 10px;
+
+	}
+
+    .description-col{
+    	display: none;
+
+    }
+
+
+    .cell input{
+		margin-left: 0px;
+	}
+
+
+	.information-col{
+		width:73%;
+	}
+
+	.info-row{
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+	}
+
+
+	.info-container{
+	   justify-content: baseline;
+ 	   height: 74%;
+       margin: 0px; 
+	}
+
+	.info-cells label {
+	    margin: auto;
+	    font-size: 1rem;
+	    font-weight: bold;
+	    display: block;
+	    overflow: hidden;
+	    margin-left: 0px;
+	}
+	.info-cells{
+		width:auto;
+		height: 100%;
+	}
+
+
+}
+
+@media all and (min-width: 900px) and (max-width:1226px) {
+
+   	.info-row{
+		height: 100%;
+		margin-bottom: 10px;
+
+	}
+
+   	.info-cells {
+   		width: auto; 
+   		display: block;
+   	}
+
+	.info-cells label {
+   		font-size: medium; 
+   	}
+
+	.info-cells input {
+		height: 50%;
+   	}
+
+
+
+}
