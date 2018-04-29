@@ -36,13 +36,13 @@
 	          		<fieldset id="Identifier" class="identifier-col">
 
 							<div class="cell">
-							<input type="text" name="Identifier" min="0" autofocus autocomplete="off" placeholder="Pin Number" pattern="[a-zA-Z0-9 ]"> 
+							<input type="text" name="Identifier" min="0" autofocus autocomplete="off" placeholder="Pin Number" pattern="[a-zA-Z0-9]"> 
 							<input type="text" name="Description"  autocomplete="off" placeholder="Asset Description">
 							<input type="button" name="Pin1" id="PinQuery" value="Query">
 							</div>
 
 							<div class="cell">
-							<input type="text" name="Identifier" min="0" autofocus autocomplete="off" placeholder="Pin Number" pattern="[a-zA-Z0-9 ]"> 
+							<input type="text" name="Identifier" min="0" autofocus autocomplete="off" placeholder="Pin Number" pattern="[a-zA-Z0-9]"> 
 							<input type="text" name="Description"  autocomplete="off" placeholder="Asset Description">
 							<input type="button" name="Pin1" id="PinQuery" value="Query">
 							</div>
@@ -138,6 +138,21 @@
 				  crossorigin="anonymous">
 				  	
 				 </script>
+				 <script src="autocomplete.min.js"></script>
+		<script>
+
+
+			var xhr;
+			new autoComplete({
+   				selector: '.identifier-col',
+    			source: function(term, response){
+      				try { xhr.abort(); } catch(e){}
+       				xhr = $.getJSON('https://api.myjson.com/bins/olsvr', { q: term }, function(data){ console.log(data);
+       				});
+   				}
+   			});
+
+		</script>
    				 <script src="js/app.js"></script>
 	</body>
 </html>
