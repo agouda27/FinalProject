@@ -70,7 +70,7 @@ a:hover {
     color:  yellow;
 }
 .identifier-col{
-	width:20%;
+	width: 40%;
 	background: #FAEBD7;
 	margin:0px;
 	padding:0px;
@@ -79,9 +79,10 @@ a:hover {
     border-right: solid #404040	;
     display: flex;
     flex-direction: column;
+
 }
 .description-col{
-	width:20%;
+	//width:20%;
 	background: #FAEBD7;
 	margin: 0px;
 	padding: 0px;
@@ -112,7 +113,7 @@ a:hover {
 }
 
 .cell{
-    height: 2rem;
+   min-height: 2rem;
     background: #7FFFD4;
     margin: 4px;
     display: flex;
@@ -120,10 +121,10 @@ a:hover {
 
 
 }
+
 .cell input{
-	margin-left: 20px;
+	margin-left: 10px;
 	margin-right: auto;
-	
 
 }
 .info-row{
@@ -169,6 +170,7 @@ input:hover {
     height: 70%;
     margin: 10px;
     padding: 10px;
+    margin-bottom: 0px;
 }
 
 #SingleUpdate{
@@ -195,6 +197,7 @@ input:hover {
 
 
 
+
 @media all and (max-width: 900px) {
 	.logo{
 		margin-bottom: 10px;
@@ -208,20 +211,24 @@ input:hover {
 
 	}
 
-    .description-col{
-    	display: none;
-
-    }
-
 
     .cell input{
-		margin-left: 0px;
+		margin-left: 5px;
+
+		width:90%;
 	}
 
-
-	.information-col{
-		width:73%;
+	.cell{
+    	flex-direction: column;
 	}
+
+	#PinQuery{
+
+		position: relative;
+
+	}	
+
+
 
 	.info-row{
 		display: flex;
