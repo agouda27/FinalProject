@@ -1,4 +1,6 @@
-
+/*Calling the GetData function when the user clicks on the query 
+button
+*/
 $('.identifier-col').on('click', function(e) {
 	const $targ = $(e.target);
 	if ($targ.is('[value="Query"]')) {
@@ -9,13 +11,16 @@ $('.identifier-col').on('click', function(e) {
 
 });
 	
-
+//Shim when the data is loading 
 const $shim = $('.js-shim');
 const showShim = () => $shim.removeClass('hidden');
 const hideShim = () => $shim.addClass('hidden');
 
 let currentpin = null;
 
+/*Calling the GetData function when the user presses enter in the
+  input field
+*/
 $('[name="Identifier"]').on('keydown', e => {
 	if (e.keyCode === 13) {
 		e.preventDefault();//Add Validator Function
@@ -24,6 +29,13 @@ $('[name="Identifier"]').on('keydown', e => {
 	}
 });
 
+/*
+Function that gets the data using HTTP request get and the jquery
+funtion getJson. If the user submits without entering the pin or 
+provide a wrong pin they get an alert informing them that it does 
+not exist. After data is retrieved it gets mapped out to the proper
+tags in the information fieldset  
+*/
 const getData = (pinNum) => {
     showShim();
     $.getJSON('https://api.myjson.com/bins/olsvr', data => {
@@ -45,52 +57,61 @@ const getData = (pinNum) => {
         $('.js-expectedReturnDate').val(data[pinNum]["Expected Return Date"]);
         $('.js-user').val(data[pinNum]["User"]);
         hideShim();
-        currentpin = pinNum;
+       currentpin = pinNum;   
     })
     
 };
-
+/*
+Update the Json when the user clicks update and the pin number is 
+not null, map the updated data to a new json and call postData 
+to update
+*/
 $('.js-submit').on('click', function(e) {
     e.preventDefault();// to test
     if (!currentpin) {
-            alert('No pins to update')
-            hideShim();
-            return;
-        } 
-    const $targ = $(e.target);   
+        alert('No pins to update')
+        hideShim();
+        return;
+    } 
+const $targ = $(e.target);   
     const data = {};
-    const PostData = {};
     
-    data["Owner"]=$targ.parent().find('[class="js-owner"]').val();
-    data["Location"]=$targ.parent().find('[class="js-location"]').val();
-    data["Manager"]=$targ.parent().find('[class="js-manager"]').val();
-    data["Activity Status"]=$targ.parent().find('[class="js-activityStatus"]').val();
-    data["Steward"]=$targ.parent().find('[class="js-steward"]').val();
-    data["Activity Type"]=$targ.parent().find('[class="js-activityType"]').val();
-    data["Asset Conditions"]=$targ.parent().find('[class="js-assetCondition"]').val();
-    data["Custodian"]=$targ.parent().find('[class="js-custodian"]').val();
-    data["Expected Return Date"]=$targ.parent().find('[class="js-expectedReturnDate"]').val();
-    data["User"]=$targ.parent().find('[class="js-user"]').val();
+    data["Owner"]=$targ.parent().find('.js-owner').val();
+    data["Location"]=$targ.parent().find('.js-location').val();
+    data["Manager"]=$targ.parent().find('.js-manager').val();
+    data["Activity Status"]=$targ.parent().find('.js-activityStatus').val();
+    data["Steward"]=$targ.parent().find('.js-steward').val();
+    data["Activity Type"]=$targ.parent().find('.js-activityType').val();
+    data["Asset Conditions"]=$targ.parent().find('.js-assetCondition').val();
+    data["Custodian"]=$targ.parent().find('.js-custodian').val();
+    data["Expected Return Date"]=$targ.parent().find('.js-expectedReturnDate').val();
+    data["User"]=$targ.parent().find('.js-user').val();
 
 
-
-    PostData[currentpin.toString()]=data;
-    //Send as a string
-    const PostDataString = JSON.stringify(PostData);
-    console.log(PostDataString)
-    postData(PostDataString);
-    alert(PostDataString);
+    postData(data);
 
     }); 
 
 
-
-    const postData = (data) => {
-
-    $.post('https://api.myjson.com/bins',data, function(data, textStatus, jqXHR){
-        console.log(data)
+/*
+Get the data to be updated and updated the value of it using the 
+current pin then put that data into the JSON using PUT 
+*/
+const postData = (newData) => {
+    $.getJSON('https://api.myjson.com/bins/olsvr')
+        .then(_data => {
+            _data[currentpin] = newData; 
+            return _data;
+        })
+        .then(_completedData => {
+            return $.ajax({
+                url:'https://api.myjson.com/bins/olsvr',
+                type:"PUT",
+                data: JSON.stringify(_completedData),
+                contentType:"application/json; charset=utf-8",
+                dataType:"json",
+        });
     })
-
 };
 
   
